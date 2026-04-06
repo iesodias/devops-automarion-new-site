@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iesodias.github.io/devops-automation-new/sitemap.xml
