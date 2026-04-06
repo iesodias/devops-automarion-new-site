@@ -39,16 +39,16 @@ export default function Hero() {
   return (
     <section
       id={SECTIONS.HERO}
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-dark"
     >
       {/* Subtle top-right ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-32 right-0 h-[520px] w-[520px] rounded-full bg-primary/[0.04] blur-3xl"
+        className="pointer-events-none absolute -top-32 right-0 h-[520px] w-[520px] rounded-full bg-primary/[0.04] dark:bg-primary/[0.08] blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-1/2 -left-40 h-[400px] w-[400px] rounded-full bg-orange/[0.05] blur-3xl"
+        className="pointer-events-none absolute top-1/2 -left-40 h-[400px] w-[400px] rounded-full bg-orange/[0.05] dark:bg-orange/[0.08] blur-3xl"
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:py-0">
@@ -87,7 +87,7 @@ export default function Hero() {
             {/* Subtitle */}
             <p
               style={stagger(2)}
-              className="mt-6 max-w-lg text-lg leading-relaxed text-gray-muted"
+              className="mt-6 max-w-lg text-lg leading-relaxed text-gray-muted dark:text-gray-light"
             >
               {personal.subtitle}
             </p>
@@ -131,13 +131,13 @@ export default function Hero() {
               <div className="absolute top-1/2 left-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 animate-[heroFloat_7s_ease-in-out_infinite_0.5s] rounded-full bg-gradient-to-r from-purple/10 to-primary/10 blur-xl" />
 
               {/* Terminal mockup */}
-              <div className="relative z-10 mx-auto mt-8 w-full max-w-sm overflow-hidden rounded-2xl border border-gray-light bg-white shadow-xl">
+              <div className="relative z-10 mx-auto mt-8 w-full max-w-sm overflow-hidden rounded-2xl border border-gray-light dark:border-white/10 bg-white dark:bg-[#1e1e3a] shadow-xl">
                 {/* Title bar */}
-                <div className="flex items-center gap-2 border-b border-gray-light bg-gray-bg px-4 py-3">
+                <div className="flex items-center gap-2 border-b border-gray-light dark:border-white/10 bg-gray-bg dark:bg-[#12122a] px-4 py-3">
                   <span className="h-3 w-3 rounded-full bg-pink/60" />
                   <span className="h-3 w-3 rounded-full bg-orange/60" />
                   <span className="h-3 w-3 rounded-full bg-primary/40" />
-                  <span className="ml-2 font-mono text-xs text-gray-muted">
+                  <span className="ml-2 font-mono text-xs text-gray-muted dark:text-gray-light">
                     terminal
                   </span>
                 </div>
@@ -160,7 +160,7 @@ export default function Hero() {
                       )}
                       <span
                         className={
-                          line.prompt ? 'text-primary' : 'text-purple font-semibold'
+                          line.prompt ? 'text-primary dark:text-white' : 'text-purple font-semibold'
                         }
                       >
                         {line.cmd}
@@ -168,7 +168,7 @@ export default function Hero() {
                     </div>
                   ))}
                   <div
-                    className="mt-1 inline-block h-4 w-2 animate-[blink_1s_step-end_infinite] bg-primary"
+                    className="mt-1 inline-block h-4 w-2 animate-[blink_1s_step-end_infinite] bg-primary dark:bg-orange"
                     style={{
                       opacity: mounted ? 1 : 0,
                       transition: 'opacity 0.5s 2s',

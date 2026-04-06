@@ -29,7 +29,7 @@ export default function About() {
   })
 
   return (
-    <section id={SECTIONS.ABOUT} className="py-20 md:py-28 bg-white">
+    <section id={SECTIONS.ABOUT} className="py-20 md:py-28 bg-white dark:bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div style={reveal(0)}>
           <SectionTitle
@@ -46,7 +46,7 @@ export default function About() {
           {/* ━━ Left — visual placeholder ━━ */}
           <div
             style={reveal(0.1)}
-            className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto w-full bg-gray-bg relative"
+            className="rounded-2xl overflow-hidden aspect-square max-w-md mx-auto w-full bg-gray-bg dark:bg-[#1e1e3a] relative"
           >
             {personal.photo && imageLoaded ? (
               <img
@@ -63,7 +63,7 @@ export default function About() {
 
                 {/* Decorative large initials */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-heading text-[10rem] font-extrabold text-primary/[0.06] select-none leading-none tracking-tight">
+                  <span className="font-heading text-[10rem] font-extrabold text-primary/[0.06] dark:text-white/[0.04] select-none leading-none tracking-tight">
                     {personal.name
                       .split(' ')
                       .map((w) => w[0])
@@ -74,16 +74,16 @@ export default function About() {
 
                 {/* Terminal-style info block */}
                 <div className="absolute inset-6 flex items-end justify-center pb-4">
-                  <div className="w-full max-w-xs bg-white/90 backdrop-blur-sm rounded-xl border border-gray-light p-5 shadow-sm">
+                  <div className="w-full max-w-xs bg-white/90 dark:bg-dark/90 backdrop-blur-sm rounded-xl border border-gray-light dark:border-white/10 p-5 shadow-sm">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="w-2.5 h-2.5 rounded-full bg-pink/60" />
                       <span className="w-2.5 h-2.5 rounded-full bg-orange/60" />
                       <span className="w-2.5 h-2.5 rounded-full bg-primary/30" />
-                      <span className="ml-auto font-mono text-[10px] text-gray-muted/60">
+                      <span className="ml-auto font-mono text-[10px] text-gray-muted/60 dark:text-gray-light/60">
                         terminal
                       </span>
                     </div>
-                    <p className="font-mono text-[11px] text-gray-muted leading-relaxed">
+                    <p className="font-mono text-[11px] text-gray-muted dark:text-gray-light leading-relaxed">
                       <span className="text-primary">$</span> whoami{'\n'}
                       <br />
                       <span className="text-primary/70">
@@ -110,11 +110,11 @@ export default function About() {
           <div style={reveal(0.2)}>
             <Badge>{personal.role}</Badge>
 
-            <p className="text-lg text-gray-body leading-relaxed mt-5">
+            <p className="text-lg text-gray-body dark:text-gray-light leading-relaxed mt-5">
               {personal.bio}
             </p>
 
-            <p className="text-lg text-gray-body leading-relaxed mt-4">
+            <p className="text-lg text-gray-body dark:text-gray-light leading-relaxed mt-4">
               Acredito que a melhor forma de aprender é construindo. Por isso,
               todos os meus cursos e conteúdos são baseados em projetos reais,
               com ferramentas que o mercado usa no dia a dia.
@@ -135,7 +135,7 @@ export default function About() {
         </div>
 
         {/* ── Counters row ── */}
-        <div style={reveal(0.3)} className="mt-16 bg-gray-bg rounded-2xl p-8 md:p-12">
+        <div style={reveal(0.3)} className="mt-16 bg-gray-bg dark:bg-white/5 rounded-2xl p-8 md:p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <Counter
               end={personal.stats.yearsExperience}

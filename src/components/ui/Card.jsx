@@ -10,10 +10,12 @@ export default function Card({
   return (
     <div
       className={[
-        'relative bg-white rounded-2xl border border-gray-light',
-        'shadow-sm',
+        'relative rounded-2xl border',
+        'bg-white border-gray-light',
+        'dark:bg-[#1e1e3a] dark:border-white/10',
+        'shadow-sm dark:shadow-[0_1px_3px_rgba(0,0,0,0.3)]',
         hoverable &&
-          'transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-0.5',
+          'transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-xl dark:hover:shadow-[0_4px_20px_rgba(0,0,0,0.4)]',
         featured && 'overflow-hidden',
         padding,
         className,

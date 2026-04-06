@@ -30,7 +30,7 @@ export default function Differentials() {
     <section
       id={SECTIONS.DIFFERENTIALS}
       ref={ref}
-      className="py-20 md:py-28 bg-gray-bg"
+      className="py-20 md:py-28 bg-gray-bg dark:bg-[#12122a]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div
@@ -60,7 +60,7 @@ export default function Differentials() {
                   transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${0.1 + index * 0.08}s, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${0.1 + index * 0.08}s`,
                 }}
               >
-                <Card className="bg-white h-full">
+                <Card className="bg-white dark:bg-[#1e1e3a] h-full">
                   {/* Icon */}
                   <div
                     className={[
@@ -74,12 +74,12 @@ export default function Differentials() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-primary mt-4">
+                  <h3 className="text-lg font-semibold text-primary dark:text-white mt-4">
                     {item.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-muted text-sm mt-2 leading-relaxed">
+                  <p className="text-gray-muted dark:text-gray-light text-sm mt-2 leading-relaxed">
                     {item.description}
                   </p>
                 </Card>

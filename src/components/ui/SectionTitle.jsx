@@ -10,7 +10,7 @@ export default function SectionTitle({
     <div className={[isCenter ? 'text-center' : 'text-left', className].filter(Boolean).join(' ')}>
       <h2
         className={[
-          'font-heading font-bold text-primary',
+          'font-heading font-bold text-primary dark:text-white',
           'text-3xl md:text-4xl leading-tight',
         ].join(' ')}
       >
@@ -32,7 +32,7 @@ export default function SectionTitle({
       {subtitle && (
         <p
           className={[
-            'mt-4 text-gray-muted text-lg leading-relaxed',
+            'mt-4 text-gray-muted dark:text-gray-light text-lg leading-relaxed',
             isCenter ? 'max-w-2xl mx-auto' : 'max-w-2xl',
           ].join(' ')}
         >

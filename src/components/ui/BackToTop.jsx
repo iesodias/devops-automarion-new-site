@@ -20,7 +20,7 @@ export default function BackToTop() {
         'fixed bottom-6 right-6 z-50',
         'flex items-center justify-center',
         'w-11 h-11 rounded-full',
-        'bg-primary text-white shadow-lg',
+        'bg-primary text-white shadow-lg dark:shadow-primary/30',
         'transition-all duration-300 ease-out',
         'hover:bg-primary-light hover:scale-110 hover:shadow-xl',
         'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',

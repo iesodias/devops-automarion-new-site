@@ -40,19 +40,19 @@ export default function NotFound() {
         />
       </Helmet>
 
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white dark:bg-dark">
         {/* ── Decorative ambient blobs ── */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-32 -right-24 h-[480px] w-[480px] animate-[notFoundFloat_7s_ease-in-out_infinite] rounded-full bg-primary/[0.04] blur-3xl"
+          className="pointer-events-none absolute -top-32 -right-24 h-[480px] w-[480px] animate-[notFoundFloat_7s_ease-in-out_infinite] rounded-full bg-primary/[0.04] dark:bg-primary/[0.08] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-24 -left-32 h-[400px] w-[400px] animate-[notFoundFloat_9s_ease-in-out_infinite_1s] rounded-full bg-orange/[0.05] blur-3xl"
+          className="pointer-events-none absolute -bottom-24 -left-32 h-[400px] w-[400px] animate-[notFoundFloat_9s_ease-in-out_infinite_1s] rounded-full bg-orange/[0.05] dark:bg-orange/[0.10] blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-1/3 left-1/2 h-[280px] w-[280px] -translate-x-1/2 animate-[notFoundFloat_8s_ease-in-out_infinite_0.5s] rounded-full bg-gradient-to-br from-purple/[0.06] to-pink/[0.04] blur-2xl"
+          className="pointer-events-none absolute top-1/3 left-1/2 h-[280px] w-[280px] -translate-x-1/2 animate-[notFoundFloat_8s_ease-in-out_infinite_0.5s] rounded-full bg-gradient-to-br from-purple/[0.06] to-pink/[0.04] dark:from-purple/[0.12] dark:to-pink/[0.08] blur-2xl"
         />
 
         {/* ── Content ── */}
@@ -64,7 +64,7 @@ export default function NotFound() {
               {/* Ghost outline behind */}
               <span
                 aria-hidden="true"
-                className="absolute inset-0 font-heading text-[8rem] font-black leading-none text-primary/[0.04] sm:text-[10rem] lg:text-[12rem]"
+                className="absolute inset-0 font-heading text-[8rem] font-black leading-none text-primary/[0.04] dark:text-primary/[0.08] sm:text-[10rem] lg:text-[12rem]"
                 style={{ transform: 'translate(4px, 4px)' }}
               >
                 404
@@ -79,7 +79,7 @@ export default function NotFound() {
             {/* Title */}
             <h2
               style={stagger(1)}
-              className="mt-2 font-heading text-2xl font-bold text-primary sm:text-3xl"
+              className="mt-2 font-heading text-2xl font-bold text-primary dark:text-white sm:text-3xl"
             >
               Página não encontrada
             </h2>
@@ -93,7 +93,7 @@ export default function NotFound() {
             {/* Description */}
             <p
               style={stagger(3)}
-              className="mt-5 max-w-md text-base leading-relaxed text-gray-muted sm:text-lg"
+              className="mt-5 max-w-md text-base leading-relaxed text-gray-muted dark:text-gray-light sm:text-lg"
             >
               A página que você procura não existe ou foi movida.
               Verifique o endereço ou volte à página inicial.
@@ -102,14 +102,14 @@ export default function NotFound() {
             {/* Terminal mockup */}
             <div
               style={stagger(4)}
-              className="mt-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-light bg-white shadow-xl"
+              className="mt-10 w-full max-w-md overflow-hidden rounded-2xl border border-gray-light dark:border-white/10 bg-white dark:bg-[#1e1e3a] shadow-xl"
             >
               {/* Title bar */}
-              <div className="flex items-center gap-2 border-b border-gray-light bg-gray-bg px-4 py-3">
+              <div className="flex items-center gap-2 border-b border-gray-light dark:border-white/10 bg-gray-bg dark:bg-[#12122a] px-4 py-3">
                 <span className="h-3 w-3 rounded-full bg-pink/60" />
                 <span className="h-3 w-3 rounded-full bg-orange/60" />
                 <span className="h-3 w-3 rounded-full bg-primary/40" />
-                <span className="ml-2 flex items-center gap-1.5 font-mono text-xs text-gray-muted">
+                <span className="ml-2 flex items-center gap-1.5 font-mono text-xs text-gray-muted dark:text-gray-light">
                   <Terminal size={12} />
                   terminal
                 </span>
@@ -134,8 +134,8 @@ export default function NotFound() {
                         line.error
                           ? 'font-semibold text-pink'
                           : line.prompt
-                            ? 'text-primary'
-                            : 'text-gray-muted'
+                            ? 'text-primary dark:text-white'
+                            : 'text-gray-muted dark:text-gray-light'
                       }
                     >
                       {line.cmd}
@@ -143,7 +143,7 @@ export default function NotFound() {
                   </div>
                 ))}
                 <div
-                  className="mt-1 inline-block h-4 w-2 animate-[blink404_1s_step-end_infinite] bg-primary"
+                  className="mt-1 inline-block h-4 w-2 animate-[blink404_1s_step-end_infinite] bg-primary dark:bg-white"
                   style={{
                     opacity: mounted ? 1 : 0,
                     transition: 'opacity 0.5s 2.2s',
@@ -169,12 +169,12 @@ export default function NotFound() {
               className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
               aria-label="Links rápidos"
             >
-              <span className="text-sm text-gray-muted">Ou acesse:</span>
+              <span className="text-sm text-gray-muted dark:text-gray-light">Ou acesse:</span>
               {quickLinks.map(({ to, label, icon: Icon }) => (
                 <Link
                   key={label}
                   to={to}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-gray-light bg-white px-4 py-2 text-sm font-medium text-primary transition-all duration-200 ease-out hover:border-primary hover:bg-primary/5 active:scale-[0.98]"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-gray-light dark:border-white/10 bg-white dark:bg-[#1e1e3a] px-4 py-2 text-sm font-medium text-primary dark:text-white transition-all duration-200 ease-out hover:border-primary hover:bg-primary/5 dark:hover:border-primary dark:hover:bg-primary/10 active:scale-[0.98]"
                 >
                   <Icon size={15} className="shrink-0" />
                   {label}
@@ -185,7 +185,7 @@ export default function NotFound() {
             {/* Brand watermark */}
             <p
               style={stagger(7)}
-              className="mt-14 font-mono text-xs tracking-wider text-gray-muted/50"
+              className="mt-14 font-mono text-xs tracking-wider text-gray-muted/50 dark:text-gray-light/30"
             >
               DEVOPS AUTOMATION
             </p>

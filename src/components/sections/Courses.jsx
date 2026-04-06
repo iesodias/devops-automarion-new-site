@@ -35,7 +35,7 @@ function CourseCard({ course, index }) {
         hoverable
       >
         {/* Card header — image with gradient fallback */}
-        <div className="relative h-36 rounded-t-2xl bg-gradient-to-br from-primary/10 to-purple/10 overflow-hidden">
+        <div className="relative h-36 rounded-t-2xl bg-gradient-to-br from-primary/10 to-purple/10 dark:from-primary/20 dark:to-purple/20 overflow-hidden">
           {course.image && !imgError ? (
             <img
               src={assetPath(course.image)}
@@ -51,7 +51,7 @@ function CourseCard({ course, index }) {
               <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-gradient-to-br from-primary/10 to-purple/8 blur-md" />
 
               {/* Decorative code skeleton */}
-              <div className="absolute top-5 left-6 flex flex-col gap-1.5 opacity-40">
+              <div className="absolute top-5 left-6 flex flex-col gap-1.5 opacity-40 dark:opacity-60">
                 <div className="h-1.5 w-16 rounded-full bg-primary/20" />
                 <div className="h-1.5 w-24 rounded-full bg-purple/15" />
                 <div className="h-1.5 w-12 rounded-full bg-primary/10" />
@@ -69,11 +69,11 @@ function CourseCard({ course, index }) {
 
         {/* Card body */}
         <div className="flex flex-col flex-1 p-6">
-          <h3 className="text-xl font-semibold text-primary leading-snug">
+          <h3 className="text-xl font-semibold text-primary dark:text-white leading-snug">
             {course.title}
           </h3>
 
-          <p className="text-gray-muted text-sm mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-gray-muted dark:text-gray-light text-sm mt-2 line-clamp-2 leading-relaxed">
             {course.shortDescription}
           </p>
 
@@ -85,8 +85,8 @@ function CourseCard({ course, index }) {
           </div>
 
           {/* Meta row */}
-          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-light text-sm text-gray-muted">
-            <BarChart3 size={15} className="text-primary/50" />
+          <div className="flex items-center gap-2 mt-4 pt-4 border-t border-gray-light dark:border-white/10 text-sm text-gray-muted dark:text-gray-light">
+            <BarChart3 size={15} className="text-primary/50 dark:text-gray-light/50" />
             {course.level}
           </div>
 
@@ -110,7 +110,7 @@ export default function Courses() {
   )
 
   return (
-    <section id={SECTIONS.COURSES} className="py-20 md:py-28 bg-white">
+    <section id={SECTIONS.COURSES} className="py-20 md:py-28 bg-white dark:bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle
           title="Cursos Práticos para Quem Quer Evoluir"

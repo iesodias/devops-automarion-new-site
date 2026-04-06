@@ -23,26 +23,26 @@ function TestimonialCard({ testimonial, index }) {
     >
       <Card className="flex flex-col h-full" hoverable>
         {/* Stylized quote character */}
-        <span className="text-5xl leading-none text-orange/30 font-serif select-none">
+        <span className="text-5xl leading-none text-orange/30 dark:text-orange/40 font-serif select-none">
           &ldquo;
         </span>
 
         {/* Testimonial text */}
-        <p className="text-gray-body text-sm leading-relaxed italic mt-2 flex-1">
+        <p className="text-gray-body dark:text-gray-light text-sm leading-relaxed italic mt-2 flex-1">
           {testimonial.text}
         </p>
 
         {/* Author info */}
-        <div className="border-t border-gray-light pt-4 mt-6 flex items-center gap-3">
+        <div className="border-t border-gray-light dark:border-white/10 pt-4 mt-6 flex items-center gap-3">
           {/* Avatar circle */}
           <div className="shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple flex items-center justify-center text-white font-semibold text-sm">
             {firstLetter}
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-semibold text-primary truncate">
+            <p className="text-sm font-semibold text-primary dark:text-white truncate">
               {testimonial.name}
             </p>
-            <p className="text-xs text-gray-muted truncate">
+            <p className="text-xs text-gray-muted dark:text-gray-light truncate">
               {testimonial.role}
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function Testimonials() {
   const [ctaRef, ctaInView] = useInView({ threshold: 0.2 })
 
   return (
-    <section id={SECTIONS.TESTIMONIALS} className="py-20 md:py-28 bg-white">
+    <section id={SECTIONS.TESTIMONIALS} className="py-20 md:py-28 bg-white dark:bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle
           title="O Que Dizem Meus Alunos"
@@ -83,7 +83,7 @@ export default function Testimonials() {
             transition: 'opacity 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s, transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.2s',
           }}
         >
-          <p className="text-gray-muted text-base max-w-lg mx-auto leading-relaxed">
+          <p className="text-gray-muted dark:text-gray-light text-base max-w-lg mx-auto leading-relaxed">
             Junte-se a centenas de profissionais que já evoluíram sua carreira.
           </p>
           <div className="mt-4">

@@ -38,7 +38,7 @@ export default function Contact() {
   const [ref, isInView] = useInView({ threshold: 0.1 })
 
   return (
-    <section id={SECTIONS.CONTACT} className="py-20 md:py-28 bg-gray-bg">
+    <section id={SECTIONS.CONTACT} className="py-20 md:py-28 bg-gray-bg dark:bg-[#12122a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle
           title="Vamos Conversar?"
@@ -56,7 +56,7 @@ export default function Contact() {
               'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)',
           }}
         >
-          <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-light shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+          <div className="bg-white dark:bg-[#1e1e3a] rounded-2xl p-8 md:p-10 border border-gray-light dark:border-white/10 shadow-[0_1px_3px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {contactItems.map(({ key, icon: Icon, label, href, external }, index) => (
                 <a
@@ -67,7 +67,7 @@ export default function Contact() {
                   className={[
                     'flex items-center gap-4 group rounded-xl px-4 py-3.5',
                     'transition-all duration-200 ease-out',
-                    'hover:bg-orange/[0.04]',
+                    'hover:bg-orange/[0.04] dark:hover:bg-orange/10',
                     // Center the last (odd) item across both columns
                     index === contactItems.length - 1 && contactItems.length % 2 !== 0
                       ? 'md:col-span-2 md:max-w-[50%] md:mx-auto md:w-full'
@@ -79,10 +79,10 @@ export default function Contact() {
                     transition: `opacity 0.5s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.07}s, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.07}s`,
                   }}
                 >
-                  <span className="shrink-0 w-11 h-11 rounded-xl bg-badge-bg flex items-center justify-center text-primary transition-colors duration-200 group-hover:bg-orange/10 group-hover:text-orange">
+                  <span className="shrink-0 w-11 h-11 rounded-xl bg-badge-bg dark:bg-white/10 flex items-center justify-center text-primary transition-colors duration-200 group-hover:bg-orange/10 group-hover:text-orange">
                     <Icon size={20} />
                   </span>
-                  <span className="text-gray-body font-medium transition-colors duration-200 group-hover:text-orange truncate">
+                  <span className="text-gray-body dark:text-gray-light font-medium transition-colors duration-200 group-hover:text-orange truncate">
                     {label}
                   </span>
                 </a>
@@ -100,7 +100,7 @@ export default function Contact() {
             >
               Envie um E-mail
             </Button>
-            <p className="text-sm text-gray-muted">
+            <p className="text-sm text-gray-muted dark:text-gray-light">
               Respondo em até 48 horas úteis.
             </p>
           </div>
