@@ -3,6 +3,7 @@ import { Menu } from 'lucide-react'
 import { scrollToSection } from '../../utils/smoothScroll'
 import { SECTIONS } from '../../constants/routes'
 import Button from '../ui/Button'
+import ThemeToggle from '../ui/ThemeToggle'
 import MobileMenu from './MobileMenu'
 
 const NAV_ITEMS = [
@@ -34,9 +35,10 @@ export default function Header({ activeSection }) {
     <>
       <header
         className={[
-          'sticky top-0 z-50 bg-white/95 backdrop-blur-sm',
+          'sticky top-0 z-50 bg-white/95 dark:bg-dark/95 backdrop-blur-sm',
+          'border-b border-transparent dark:border-white/10',
           'transition-shadow duration-300',
-          scrolled ? 'shadow-md' : 'shadow-none',
+          scrolled ? 'shadow-md dark:shadow-[0_1px_0_rgba(255,255,255,0.05)]' : 'shadow-none',
         ].join(' ')}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
@@ -49,7 +51,7 @@ export default function Header({ activeSection }) {
             }}
             className="flex items-center gap-0.5 font-heading select-none"
           >
-            <span className="text-xl md:text-2xl font-bold text-primary">DevOps</span>
+            <span className="text-xl md:text-2xl font-bold text-primary dark:text-white">DevOps</span>
             <span className="text-xl md:text-2xl font-bold text-orange">Automation</span>
           </a>
 
@@ -66,8 +68,8 @@ export default function Header({ activeSection }) {
                     'relative px-3 py-2 text-sm font-medium rounded-md',
                     'transition-colors duration-200 cursor-pointer',
                     isActive
-                      ? 'text-primary font-semibold'
-                      : 'text-gray-body hover:text-primary',
+                      ? 'text-primary dark:text-white font-semibold'
+                      : 'text-gray-body dark:text-gray-light hover:text-primary dark:hover:text-white',
                   ].join(' ')}
                 >
                   {label}
@@ -89,6 +91,10 @@ export default function Header({ activeSection }) {
           {/* Right side */}
           <div className="flex items-center gap-3">
             <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
+
+            <div className="hidden md:block">
               <Button
                 variant="primary"
                 size="sm"
@@ -98,12 +104,16 @@ export default function Header({ activeSection }) {
               </Button>
             </div>
 
+            <div className="md:hidden">
+              <ThemeToggle />
+            </div>
+
             {/* Mobile hamburger */}
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menu"
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-gray-bg transition-colors cursor-pointer"
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary dark:text-white hover:bg-gray-bg dark:hover:bg-white/10 transition-colors cursor-pointer"
             >
               <Menu size={22} />
             </button>

@@ -10,7 +10,7 @@ import { SECTIONS } from '../../constants/routes'
 
 function ProjectVisual({ project }) {
   return (
-    <div className="relative h-40 rounded-t-2xl bg-white overflow-hidden">
+    <div className="relative h-40 rounded-t-2xl bg-white dark:bg-[#1e1e3a] overflow-hidden">
       {/* Featured left accent */}
       {project.featured && (
         <span className="absolute left-0 inset-y-0 w-1 bg-orange z-10" />
@@ -18,10 +18,10 @@ function ProjectVisual({ project }) {
 
       {/* Terminal-style header bar */}
       <div className="flex items-center gap-2 px-5 pt-4">
-        <span className="w-3 h-3 rounded-full bg-pink/40" />
-        <span className="w-3 h-3 rounded-full bg-orange/40" />
-        <span className="w-3 h-3 rounded-full bg-primary/20" />
-        <span className="ml-3 font-mono text-xs text-primary/40 truncate">
+        <span className="w-3 h-3 rounded-full bg-pink/40 dark:bg-pink/60" />
+        <span className="w-3 h-3 rounded-full bg-orange/40 dark:bg-orange/60" />
+        <span className="w-3 h-3 rounded-full bg-primary/20 dark:bg-primary/40" />
+        <span className="ml-3 font-mono text-xs text-primary/40 dark:text-gray-light/40 truncate">
           ~/{project.slug}
         </span>
       </div>
@@ -31,7 +31,7 @@ function ProjectVisual({ project }) {
         {project.technologies.slice(0, 3).map((tech) => (
           <span
             key={tech}
-            className="font-mono text-lg text-primary/[0.06] font-bold leading-tight tracking-wide"
+            className="font-mono text-lg text-primary/[0.06] dark:text-white/[0.06] font-bold leading-tight tracking-wide"
           >
             {tech}
           </span>
@@ -41,13 +41,13 @@ function ProjectVisual({ project }) {
       {/* Decorative terminal prompt */}
       <div className="mt-4 px-5 flex flex-col gap-1">
         <div className="flex items-center gap-2">
-          <Terminal size={13} className="text-primary/25" />
-          <div className="h-1.5 w-20 rounded-full bg-primary/8" />
-          <div className="h-1.5 w-14 rounded-full bg-purple/6" />
+          <Terminal size={13} className="text-primary/25 dark:text-gray-light/25" />
+          <div className="h-1.5 w-20 rounded-full bg-primary/8 dark:bg-primary/15" />
+          <div className="h-1.5 w-14 rounded-full bg-purple/6 dark:bg-purple/12" />
         </div>
         <div className="flex items-center gap-2 ml-5">
-          <div className="h-1.5 w-28 rounded-full bg-primary/5" />
-          <div className="h-1.5 w-10 rounded-full bg-orange/8" />
+          <div className="h-1.5 w-28 rounded-full bg-primary/5 dark:bg-primary/12" />
+          <div className="h-1.5 w-10 rounded-full bg-orange/8 dark:bg-orange/15" />
         </div>
       </div>
     </div>
@@ -67,17 +67,17 @@ function ProjectCard({ project, index }) {
         transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${index * 0.1}s, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${index * 0.1}s`,
       }}
     >
-      <Card className="bg-white p-0 overflow-hidden flex flex-col h-full" hoverable>
+      <Card className="bg-white dark:bg-[#1e1e3a] p-0 overflow-hidden flex flex-col h-full" hoverable>
         {/* Terminal-style visual header */}
         <ProjectVisual project={project} />
 
         {/* Card body */}
         <div className="flex flex-col flex-1 p-6">
-          <h3 className="text-lg font-semibold text-primary leading-snug">
+          <h3 className="text-lg font-semibold text-primary dark:text-white leading-snug">
             {project.title}
           </h3>
 
-          <p className="text-gray-muted text-sm mt-2 leading-relaxed">
+          <p className="text-gray-muted dark:text-gray-light text-sm mt-2 leading-relaxed">
             {project.shortDescription}
           </p>
 
@@ -97,7 +97,7 @@ function ProjectCard({ project, index }) {
               {project.highlights.slice(0, 2).map((highlight) => (
                 <li
                   key={highlight}
-                  className="flex items-start gap-2 text-xs text-gray-muted leading-relaxed"
+                  className="flex items-start gap-2 text-xs text-gray-muted dark:text-gray-light leading-relaxed"
                 >
                   <Check size={13} className="shrink-0 mt-0.5 text-orange" />
                   <span>{highlight}</span>
@@ -132,7 +132,7 @@ function ProjectCard({ project, index }) {
 
 export default function Portfolio() {
   return (
-    <section id={SECTIONS.PORTFOLIO} className="py-20 md:py-28 bg-gray-bg">
+    <section id={SECTIONS.PORTFOLIO} className="py-20 md:py-28 bg-gray-bg dark:bg-[#12122a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionTitle
           title="Projetos que Demonstram na Prática"

@@ -33,8 +33,8 @@ export default function ProjectDetail() {
 
         <section className="relative flex flex-col items-center justify-center min-h-[60vh] px-4 text-center overflow-hidden">
           {/* Decorative blobs */}
-          <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-purple/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-orange/10 blur-3xl" />
+          <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-purple/10 dark:bg-purple/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-orange/10 dark:bg-orange/20 blur-3xl" />
 
           <div
             className={`relative z-10 flex flex-col items-center transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
@@ -44,11 +44,11 @@ export default function ProjectDetail() {
               <FolderOpen size={36} className="text-white" strokeWidth={1.75} />
             </div>
 
-            <h1 className="mt-7 text-3xl font-heading font-bold text-primary">
+            <h1 className="mt-7 text-3xl font-heading font-bold text-primary dark:text-white">
               Projeto não encontrado
             </h1>
 
-            <p className="mt-3 max-w-md text-lg text-gray-muted leading-relaxed">
+            <p className="mt-3 max-w-md text-lg text-gray-muted dark:text-gray-light leading-relaxed">
               O projeto que você procura não existe ou foi movido.
             </p>
 
@@ -62,7 +62,7 @@ export default function ProjectDetail() {
             </Link>
 
             {/* Secondary hint */}
-            <p className="mt-5 text-sm text-gray-muted">
+            <p className="mt-5 text-sm text-gray-muted dark:text-gray-light">
               Ou explore nosso{' '}
               <Link
                 to="/#portfolio"
@@ -86,26 +86,26 @@ export default function ProjectDetail() {
       </Helmet>
 
       {/* ─── A · Hero / Header ───────────────────────────── */}
-      <section className="bg-gray-bg py-12 md:py-20">
+      <section className="bg-gray-bg dark:bg-[#12122a] py-12 md:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-gray-muted">
-            <Link to="/" className="hover:text-primary transition-colors">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-gray-muted dark:text-gray-light">
+            <Link to="/" className="hover:text-primary dark:hover:text-white transition-colors">
               Início
             </Link>
             <ChevronRight size={14} className="shrink-0" />
             <span>Portfólio</span>
             <ChevronRight size={14} className="shrink-0" />
-            <span className="text-primary font-medium truncate">
+            <span className="text-primary dark:text-white font-medium truncate">
               {project.title}
             </span>
           </nav>
 
-          <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary mt-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary dark:text-white mt-6 leading-tight">
             {project.title}
           </h1>
 
-          <p className="text-lg text-gray-muted mt-4 max-w-3xl leading-relaxed">
+          <p className="text-lg text-gray-muted dark:text-gray-light mt-4 max-w-3xl leading-relaxed">
             {project.description}
           </p>
 
@@ -148,9 +148,9 @@ export default function ProjectDetail() {
       </section>
 
       {/* ─── B · Destaques do Projeto ────────────────────── */}
-      <section className="bg-white py-16">
+      <section className="bg-white dark:bg-dark py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-heading font-bold text-primary">
+          <h2 className="text-2xl font-heading font-bold text-primary dark:text-white">
             Destaques do Projeto
           </h2>
 
@@ -161,7 +161,7 @@ export default function ProjectDetail() {
                   size={20}
                   className="text-orange shrink-0 mt-0.5"
                 />
-                <span className="text-gray-body leading-relaxed">{item}</span>
+                <span className="text-gray-body dark:text-gray-light leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -192,9 +192,9 @@ export default function ProjectDetail() {
         ]
 
         return (
-          <section className="bg-gray-bg py-16">
+          <section className="bg-gray-bg dark:bg-[#12122a] py-16">
             <div className="max-w-5xl mx-auto px-4 sm:px-6">
-              <h2 className="text-2xl font-heading font-bold text-primary mb-8">
+              <h2 className="text-2xl font-heading font-bold text-primary dark:text-white mb-8">
                 Labs Disponíveis
               </h2>
 
@@ -203,13 +203,13 @@ export default function ProjectDetail() {
                 {stats.map((s) => (
                   <div
                     key={s.label}
-                    className="bg-white rounded-xl p-4 text-center shadow-sm"
+                    className="bg-white dark:bg-[#1e1e3a] rounded-xl p-4 text-center shadow-sm"
                   >
                     <span className="block text-lg" aria-hidden="true">{s.icon}</span>
-                    <span className="block text-3xl font-bold text-primary mt-1">
+                    <span className="block text-3xl font-bold text-primary dark:text-white mt-1">
                       {s.value}
                     </span>
-                    <span className="block text-sm text-gray-muted mt-0.5">
+                    <span className="block text-sm text-gray-muted dark:text-gray-light mt-0.5">
                       {s.label}
                     </span>
                   </div>
@@ -224,9 +224,9 @@ export default function ProjectDetail() {
                   return (
                     <div
                       key={provider}
-                      className="bg-white rounded-2xl border border-gray-light p-6 shadow-sm"
+                      className="bg-white dark:bg-[#1e1e3a] rounded-2xl border border-gray-light dark:border-white/10 p-6 shadow-sm"
                     >
-                      <h3 className="text-xl font-heading font-bold text-primary flex items-center gap-2">
+                      <h3 className="text-xl font-heading font-bold text-primary dark:text-white flex items-center gap-2">
                         <span aria-hidden="true">{meta.emoji}</span>
                         {meta.label}
                       </h3>
@@ -244,13 +244,13 @@ export default function ProjectDetail() {
                                 href={lab.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 group py-2.5 px-3 rounded-lg hover:bg-orange/5 transition-colors"
+                                className="flex items-center gap-3 group py-2.5 px-3 rounded-lg hover:bg-orange/5 dark:hover:bg-orange/10 transition-colors"
                               >
                                 <ExternalLink
                                   size={14}
-                                  className="text-gray-muted group-hover:text-orange transition-colors shrink-0"
+                                  className="text-gray-muted dark:text-gray-light group-hover:text-orange transition-colors shrink-0"
                                 />
-                                <span className="text-gray-body group-hover:text-primary transition-colors text-sm">
+                                <span className="text-gray-body dark:text-gray-light group-hover:text-primary dark:group-hover:text-white transition-colors text-sm">
                                   {lab.title}
                                 </span>
                               </a>
@@ -268,10 +268,10 @@ export default function ProjectDetail() {
       })()}
 
       {/* ─── C · Back navigation ─────────────────────────── */}
-      <section className="bg-gray-bg py-12 text-center">
+      <section className="bg-gray-bg dark:bg-[#12122a] py-12 text-center">
         <Link
           to="/"
-          className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-orange transition-colors font-medium"
+          className="inline-flex items-center gap-1.5 text-sm text-primary dark:text-white hover:text-orange transition-colors font-medium"
         >
           <ArrowLeft size={16} />
           Voltar para o portfólio

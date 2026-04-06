@@ -4,11 +4,11 @@ const variants = {
   primary:
     'bg-orange text-white shadow-md hover:bg-orange-dark hover:shadow-lg hover:scale-[1.03] active:scale-[0.98]',
   secondary:
-    'border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white active:scale-[0.98]',
+    'border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white active:scale-[0.98] dark:border-gray-light dark:text-gray-light dark:hover:bg-gray-light dark:hover:text-dark',
   outline:
-    'border border-gray-light text-primary bg-transparent hover:border-primary hover:bg-primary/5 active:scale-[0.98]',
+    'border border-gray-light text-primary bg-transparent hover:border-primary hover:bg-primary/5 active:scale-[0.98] dark:border-white/20 dark:text-gray-light dark:hover:border-white/40 dark:hover:bg-white/5',
   ghost:
-    'text-primary bg-transparent hover:bg-gray-bg active:scale-[0.98]',
+    'text-primary bg-transparent hover:bg-gray-bg active:scale-[0.98] dark:text-gray-light dark:hover:bg-white/10',
 }
 
 const sizes = {
@@ -34,7 +34,7 @@ const Button = forwardRef(function Button(
     'font-semibold rounded-lg',
     'transition-all duration-200 ease-out',
     'cursor-pointer select-none',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
+    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:focus-visible:outline-orange',
     variants[variant],
     sizes[size],
     className,

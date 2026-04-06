@@ -37,11 +37,11 @@ export default function Counter({
 
   return (
     <div ref={ref} className="text-center">
-      <span className="block text-4xl font-bold text-primary font-heading tabular-nums">
+      <span className="block text-4xl font-bold text-primary dark:text-white font-heading tabular-nums">
         {count}
         {suffix}
       </span>
-      <span className="block mt-1 text-sm text-gray-muted">{label}</span>
+      <span className="block mt-1 text-sm text-gray-muted dark:text-gray-light">{label}</span>
     </div>
   )
 }

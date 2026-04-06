@@ -12,7 +12,7 @@ export default function Layout() {
   const activeSection = useScrollSpy(sectionIds, 120)
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-dark flex flex-col">
       <ScrollToTop />
       <Header activeSection={activeSection} />
 

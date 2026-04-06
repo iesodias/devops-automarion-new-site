@@ -3,6 +3,7 @@ import { X } from 'lucide-react'
 import { scrollToSection } from '../../utils/smoothScroll'
 import { SECTIONS } from '../../constants/routes'
 import Button from '../ui/Button'
+import ThemeToggle from '../ui/ThemeToggle'
 
 const NAV_ITEMS = [
   { label: 'Início', section: SECTIONS.HERO },
@@ -50,7 +51,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
       {/* Backdrop */}
       <div
         className={[
-          'absolute inset-0 bg-dark/20 backdrop-blur-sm',
+          'absolute inset-0 bg-dark/20 dark:bg-black/50 backdrop-blur-sm',
           'transition-opacity duration-300',
           isOpen ? 'opacity-100' : 'opacity-0',
         ].join(' ')}
@@ -61,31 +62,34 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
       <div
         className={[
           'absolute top-0 right-0 h-full w-full max-w-sm',
-          'bg-white shadow-2xl',
+          'bg-white dark:bg-dark shadow-2xl',
           'flex flex-col',
           'transition-transform duration-300 ease-out',
           isOpen ? 'translate-x-0' : 'translate-x-full',
         ].join(' ')}
       >
-        {/* Close button */}
+        {/* Header controls */}
         <div className="flex items-center justify-between px-6 h-16">
           <span className="font-heading select-none">
-            <span className="text-xl font-bold text-primary">DevOps</span>
+            <span className="text-xl font-bold text-primary dark:text-white">DevOps</span>
             <span className="text-xl font-bold text-orange">Automation</span>
           </span>
-          <button
-            ref={closeRef}
-            type="button"
-            onClick={onClose}
-            aria-label="Fechar menu"
-            className="flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-gray-bg transition-colors cursor-pointer"
-          >
-            <X size={22} />
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              ref={closeRef}
+              type="button"
+              onClick={onClose}
+              aria-label="Fechar menu"
+              className="flex items-center justify-center w-10 h-10 rounded-lg text-primary dark:text-white hover:bg-gray-bg dark:hover:bg-white/10 transition-colors cursor-pointer"
+            >
+              <X size={22} />
+            </button>
+          </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-light" />
+        <div className="border-t border-gray-light dark:border-white/10" />
 
         {/* Nav links */}
         <nav className="flex-1 flex flex-col px-6 pt-8 gap-1">
@@ -100,8 +104,8 @@ export default function MobileMenu({ isOpen, onClose, activeSection }) {
                   'text-left py-3.5 px-4 rounded-xl text-lg font-medium',
                   'transition-colors duration-200 cursor-pointer',
                   isActive
-                    ? 'text-primary bg-badge-bg font-semibold'
-                    : 'text-gray-body hover:text-primary hover:bg-gray-bg',
+                    ? 'text-primary dark:text-white bg-badge-bg dark:bg-white/10 font-semibold'
+                    : 'text-gray-body dark:text-gray-light hover:text-primary dark:hover:text-white hover:bg-gray-bg dark:hover:bg-white/10',
                 ].join(' ')}
               >
                 {label}
