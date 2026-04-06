@@ -1,3 +1,7 @@
+# Copilot agents and skills (sensitive)
+.github/agents/
+.github/skills/
+
 # Logs
 logs
 *.log
