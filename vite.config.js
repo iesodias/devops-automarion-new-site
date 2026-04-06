@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/devops-automarion-new-site/',
+  base: '/',
   build: {
     outDir: 'dist',
   },
