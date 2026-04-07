@@ -21,7 +21,7 @@ function CourseCard({ course, index }) {
   const [imgError, setImgError] = useState(false)
 
   return (
-    <div
+    <article
       ref={ref}
       className="h-full"
       style={{
@@ -39,7 +39,9 @@ function CourseCard({ course, index }) {
           {course.image && !imgError ? (
             <img
               src={assetPath(course.image)}
-              alt={course.title}
+              alt={`Capa do curso ${course.title}`}
+              width="800"
+              height="450"
               className="w-full h-full object-cover"
               loading="lazy"
               onError={() => setImgError(true)}
@@ -100,7 +102,7 @@ function CourseCard({ course, index }) {
           </div>
         </div>
       </Card>
-    </div>
+    </article>
   )
 }
 

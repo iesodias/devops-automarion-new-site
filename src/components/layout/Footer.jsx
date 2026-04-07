@@ -93,13 +93,16 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {NAV_LINKS.map(({ label, section }) => (
                 <li key={section}>
-                  <button
-                    type="button"
-                    onClick={() => scrollToSection(section)}
+                  <a
+                    href={`/#${section}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      scrollToSection(section)
+                    }}
                     className="text-white/70 hover:text-orange transition-colors duration-200 text-sm cursor-pointer"
                   >
                     {label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
