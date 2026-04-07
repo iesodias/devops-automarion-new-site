@@ -51,7 +51,9 @@ export default function About() {
             {personal.photo && imageLoaded ? (
               <img
                 src={assetPath(personal.photo)}
-                alt={personal.name}
+                alt="Ieso Dias — DevOps Engineer e Instrutor de Cloud e Automação"
+                width="600"
+                height="670"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 onError={() => setImageLoaded(false)}

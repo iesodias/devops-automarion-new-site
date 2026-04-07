@@ -5,7 +5,7 @@ export const personal = {
   tagline: 'DevOps na prática. Da infraestrutura ao deploy, com automação de verdade.',
   subtitle: 'Cursos, projetos e conteúdo para quem quer construir, não apenas assistir.',
   bio: 'Especialista em DevOps, Cloud e Automação com experiência prática em infraestrutura como código, pipelines CI/CD e orquestração de containers. Instrutor na Udemy com milhares de alunos formados, criador do canal DevOps Automation no YouTube e apaixonado por ensinar tecnologia de forma direta, prática e sem enrolação.',
-  photo: '/assets/images/profile.png',
+  photo: '/assets/images/profile.webp',
   stats: {
     yearsExperience: 20,
     projectsDelivered: 15,

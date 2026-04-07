@@ -60,10 +60,13 @@ export default function Header({ activeSection }) {
             {NAV_ITEMS.map(({ label, section }) => {
               const isActive = activeSection === section
               return (
-                <button
+                <a
                   key={section}
-                  type="button"
-                  onClick={() => scrollToSection(section)}
+                  href={`/#${section}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollToSection(section)
+                  }}
                   className={[
                     'relative px-3 py-2 text-sm font-medium rounded-md',
                     'transition-colors duration-200 cursor-pointer',
@@ -83,7 +86,7 @@ export default function Header({ activeSection }) {
                       isActive ? 'w-5 opacity-100' : 'w-0 opacity-0',
                     ].join(' ')}
                   />
-                </button>
+                </a>
               )
             })}
           </nav>

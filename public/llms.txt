@@ -1,0 +1,64 @@
+# iesodias.com
+
+## About
+This is the personal portfolio and course platform of Ieso Dias, a DevOps Engineer specializing in Cloud Computing, Infrastructure as Code, and Automation.
+
+## Author
+- Name: Ieso Dias
+- Role: DevOps Engineer & Instructor
+- Website: https://iesodias.com
+- Blog: https://devopsautomation.com.br/blog
+- GitHub: https://github.com/iesodias
+- LinkedIn: https://linkedin.com/in/iesodias
+
+## Courses
+- DevOps: Automação Sem Enrolação
+  - Description: Domine DevOps com automações reais, laboratórios práticos e sem enrolação. Aprenda na prática o que o mercado exige.
+  - Udemy: https://www.udemy.com/course/devops-automacao-sem-enrolacao/?referralCode=28E4F89140C44D63D605
+- Engenharia de Plataforma: Do Conceito à Plataforma Interna
+  - Description: Domine Engenharia de Plataforma na prática: construa sua Plataforma Interna de Desenvolvimento (IDP) com Crossplane, Backstage e ArgoCD do zero ao deploy.
+  - Udemy: https://www.udemy.com/course/engenharia-de-plataforma-do-conceito-a-plataforma-interna/?referralCode=1F85049179AB40CC0D96
+- GitHub Actions: Guia Completo — Do Zero ao Deploy
+  - Description: Construa pipelines CI/CD profissionais com GitHub Actions: workflows reutilizáveis, matrix builds, cache, secrets seguros e deploy automatizado para Docker, Kubernetes e Cloud — do zero ao avançado.
+  - Udemy: https://www.udemy.com/course/github-actions-guia-completo-do-zero-ao-deploy/?referralCode=60082D18B7A95410D60C
+- Engenharia de Prompt: Domine ChatGPT, Gemini e Claude
+  - Description: Aprenda técnicas avançadas de prompt engineering com as principais IAs do mercado. Domine ChatGPT, Gemini e Claude para automações inteligentes.
+  - Udemy: https://www.udemy.com/course/engenharia-de-prompt-para-desenvolvedores-e-devops/?referralCode=8D82110C386AC1683361
+- Terraform + IA: Domine AWS e Azure na Prática
+  - Description: Domine infraestrutura como código no Azure com Terraform na prática. Automatize recursos cloud de forma profissional e escalável usando IA.
+  - Udemy: https://www.udemy.com/course/terraform-seguro-2025-devsecops-azure-sem-vulnerabilidades/?referralCode=56AC1D8EE6FC6574CEDE
+- IA com ChatGPT Sem Enrolação — Do Zero ao Essencial
+  - Description: Do básico ao avançado: aprenda a usar ChatGPT de forma estratégica para automação, produtividade e resolução de problemas técnicos.
+  - Udemy: https://www.udemy.com/course/ia-com-chatgpt-sem-enrolacao-do-zero-ao-essencial/?referralCode=AC46610BA618B97C14C8
+- DevOps para Iniciantes
+  - Description: Este curso introdutório é o ponto de partida pra você aprender DevOps na prática. Vamos do terminal com Bash até a criação da sua primeira pipeline com GitHub Actions.
+  - Udemy: https://www.udemy.com/course/devops-para-iniciantes-primeiros-passos-em-menos-de-2-horas/?referralCode=638ADE7A2C334ECE0B96
+
+## Projects
+- DevOps Automation Lab
+  - Description: Laboratório completo de automação DevOps com Terraform, Ansible e GitHub Actions para provisionamento de infraestrutura na Azure.
+  - Technologies: Terraform, Ansible, Azure, GitHub Actions, Docker
+- Tech Challenge — Labs Práticos de Cloud
+  - Description: Repositório open source com labs práticos e passo a passo para aprender AWS e Azure. Inclui 8 labs organizados por nível, materiais de estudo e quizzes interativos via GitHub Issues.
+  - Technologies: AWS, Azure, S3, IAM, EC2, CLI, Storage Account, Virtual Machine
+
+## Topics Covered
+- DevOps
+- Cloud Computing (Azure, AWS)
+- Infrastructure as Code (Terraform)
+- CI/CD (GitHub Actions)
+- Containerization (Docker, Kubernetes)
+- Platform Engineering
+- AI/ML for DevOps
+- Prompt Engineering
+
+## Language
+Primary content language: Portuguese (Brazil)
+
+## Contact
+- Email: iesodias@gmail.com
+- Main Website: https://devopsautomation.com.br
+- YouTube: https://youtube.com/@iesodias
+- Instagram: https://instagram.com/iesofdias
+- GitHub: https://github.com/iesodias
+- LinkedIn: https://linkedin.com/in/iesodias

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background gradient: deep space feel -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="40%" stop-color="#1c2385"/>
+      <stop offset="100%" stop-color="#0f0f1e"/>
+    </linearGradient>
+
+    <!-- Orange accent gradient -->
+    <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+
+    <!-- Glow filter for the name -->
+    <filter id="nameGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#f97316" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for decorative elements -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Dot pattern for tech texture -->
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="#ffffff" opacity="0.04"/>
+    </pattern>
+
+    <!-- Grid lines for subtle tech feel -->
+    <pattern id="grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+      <line x1="0" y1="0" x2="60" y2="0" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+    </pattern>
+
+    <!-- Clip for rounded inner frame -->
+    <clipPath id="frameClip">
+      <rect x="24" y="24" width="1152" height="582" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- ===== BACKGROUND ===== -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Tech texture layers -->
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- ===== AMBIENT GLOW ORBS ===== -->
+  <!-- Top-right blue glow -->
+  <circle cx="950" cy="120" r="200" fill="#1c2385" opacity="0.35" filter="url(#softGlow)"/>
+  <!-- Bottom-left orange glow -->
+  <circle cx="200" cy="520" r="160" fill="#f97316" opacity="0.08" filter="url(#softGlow)"/>
+  <!-- Center subtle purple -->
+  <circle cx="600" cy="315" r="280" fill="#2d2d6b" opacity="0.12" filter="url(#softGlow)"/>
+
+  <!-- ===== SUBTLE BORDER FRAME ===== -->
+  <rect x="24" y="24" width="1152" height="582" rx="16" ry="16"
+        fill="none" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+
+  <!-- ===== TERMINAL WINDOW (top-left decorative) ===== -->
+  <g transform="translate(60, 52)" opacity="0.55">
+    <!-- Terminal bar -->
+    <rect width="220" height="28" rx="6" fill="#ffffff" opacity="0.06"/>
+    <!-- Traffic lights -->
+    <circle cx="14" cy="14" r="4.5" fill="#ff5f57"/>
+    <circle cx="32" cy="14" r="4.5" fill="#febc2e"/>
+    <circle cx="50" cy="14" r="4.5" fill="#28c840"/>
+    <!-- Terminal title -->
+    <text x="110" y="18" font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace"
+          font-size="10" fill="#ffffff" opacity="0.5" text-anchor="middle">terminal</text>
+  </g>
+
+  <!-- Terminal prompt lines (decorative, left side) -->
+  <g transform="translate(60, 96)" opacity="0.3">
+    <text font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" font-size="12" fill="#28c840">
+      <tspan x="0" dy="0">❯ terraform apply</tspan>
+    </text>
+    <text font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" font-size="12" fill="#ffffff" opacity="0.4">
+      <tspan x="0" dy="20">Apply complete! Resources: 42 added</tspan>
+    </text>
+    <text font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" font-size="12" fill="#28c840">
+      <tspan x="0" dy="24">❯ kubectl get pods</tspan>
+    </text>
+    <text font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" font-size="12" fill="#ffffff" opacity="0.4">
+      <tspan x="0" dy="20">NAME              READY   STATUS</tspan>
+    </text>
+    <text font-family="'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" font-size="12" fill="#ffffff" opacity="0.4">
+      <tspan x="0" dy="18">app-deploy-7d4    3/3     Running</tspan>
+    </text>
+  </g>
+
+  <!-- ===== CODE BRACKET DECORATION (right side) ===== -->
+  <g transform="translate(1020, 60)" opacity="0.08">
+    <text font-family="'JetBrains Mono', monospace" font-size="180" fill="#ffffff" font-weight="300">
+      {&gt;}
+    </text>
+  </g>
+
+  <!-- ===== MAIN CONTENT ===== -->
+
+  <!-- Orange accent bar (left of name) -->
+  <rect x="60" y="258" width="5" height="120" rx="2.5" fill="url(#orangeGrad)" opacity="0.9"/>
+
+  <!-- Name: Ieso Dias -->
+  <text x="86" y="322" font-family="'Poppins', 'Inter', system-ui, sans-serif"
+        font-size="80" font-weight="800" fill="#ffffff" letter-spacing="-2"
+        filter="url(#nameGlow)">
+    Ieso Dias
+  </text>
+
+  <!-- Subtitle: DevOps | Cloud | Automação -->
+  <text x="90" y="372" font-family="'Inter', system-ui, sans-serif"
+        font-size="26" font-weight="500" fill="#f97316" letter-spacing="4" opacity="0.95">
+    DevOps  |  Cloud  |  Automação
+  </text>
+
+  <!-- Tagline (smaller, below subtitle) -->
+  <text x="90" y="410" font-family="'Inter', system-ui, sans-serif"
+        font-size="16" font-weight="400" fill="#ffffff" opacity="0.45" letter-spacing="0.5">
+    DevOps na prática. Da infraestrutura ao deploy.
+  </text>
+
+  <!-- ===== HORIZONTAL RULE ===== -->
+  <line x1="90" y1="440" x2="500" y2="440" stroke="url(#orangeGrad)" stroke-width="2" opacity="0.3"/>
+
+  <!-- ===== TECH BADGES ===== -->
+  <g transform="translate(90, 462)">
+    <!-- Terraform -->
+    <rect x="0" y="0" width="96" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="48" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">Terraform</text>
+    <!-- Kubernetes -->
+    <rect x="108" y="0" width="104" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="160" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">Kubernetes</text>
+    <!-- Docker -->
+    <rect x="224" y="0" width="76" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="262" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">Docker</text>
+    <!-- CI/CD -->
+    <rect x="312" y="0" width="70" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="347" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">CI/CD</text>
+    <!-- AWS -->
+    <rect x="394" y="0" width="60" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="424" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">AWS</text>
+    <!-- Azure -->
+    <rect x="466" y="0" width="66" height="30" rx="6" fill="#ffffff" opacity="0.06"/>
+    <text x="499" y="20" font-family="'JetBrains Mono', monospace" font-size="11"
+          fill="#ffffff" opacity="0.5" text-anchor="middle">Azure</text>
+  </g>
+
+  <!-- ===== GEOMETRIC ACCENTS (right side) ===== -->
+
+  <!-- Floating orange diamond -->
+  <g transform="translate(980, 320) rotate(45)" opacity="0.15">
+    <rect x="-30" y="-30" width="60" height="60" rx="4" fill="none" stroke="#f97316" stroke-width="2"/>
+  </g>
+  <g transform="translate(1040, 260) rotate(45)" opacity="0.08">
+    <rect x="-18" y="-18" width="36" height="36" rx="2" fill="#f97316"/>
+  </g>
+
+  <!-- Floating circles -->
+  <circle cx="920" cy="480" r="8" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="960" cy="510" r="4" fill="#f97316" opacity="0.15"/>
+  <circle cx="1080" cy="440" r="12" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.08"/>
+
+  <!-- Dotted connector line (right side) -->
+  <line x1="980" y1="370" x2="1120" y2="370" stroke="#f97316" stroke-width="1"
+        stroke-dasharray="4 6" opacity="0.2"/>
+  <circle cx="1120" cy="370" r="3" fill="#f97316" opacity="0.3"/>
+
+  <!-- ===== BOTTOM BAR ===== -->
+  <!-- Subtle bottom gradient bar -->
+  <rect x="0" y="580" width="1200" height="50" fill="#000000" opacity="0.25"/>
+
+  <!-- Website URL -->
+  <text x="600" y="610" font-family="'JetBrains Mono', 'SF Mono', monospace"
+        font-size="16" fill="#ffffff" opacity="0.6" text-anchor="middle" letter-spacing="3">
+    iesodias.com
+  </text>
+
+  <!-- Small orange dot before URL -->
+  <circle cx="530" cy="606" r="3" fill="#f97316" opacity="0.7"/>
+
+  <!-- ===== CORNER ACCENTS ===== -->
+  <!-- Top-right corner bracket -->
+  <g opacity="0.12">
+    <line x1="1140" y1="40" x2="1160" y2="40" stroke="#f97316" stroke-width="2"/>
+    <line x1="1160" y1="40" x2="1160" y2="60" stroke="#f97316" stroke-width="2"/>
+  </g>
+  <!-- Bottom-left corner bracket -->
+  <g opacity="0.12">
+    <line x1="40" y1="570" x2="40" y2="590" stroke="#f97316" stroke-width="2"/>
+    <line x1="40" y1="590" x2="60" y2="590" stroke="#f97316" stroke-width="2"/>
+  </g>
+</svg>

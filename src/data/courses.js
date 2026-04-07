@@ -10,7 +10,7 @@ export const courses = [
     badge: 'Mais Vendido',
     featured: true,
     url: 'https://www.udemy.com/course/devops-automacao-sem-enrolacao/?referralCode=28E4F89140C44D63D605',
-    image: '/assets/images/courses/devops-automacao.png',
+    image: '/assets/images/courses/devops-automacao.webp',
   },
   {
     id: 'engenharia-plataforma',
@@ -23,7 +23,7 @@ export const courses = [
     badge: 'Lançamento',
     featured: true,
     url: 'https://www.udemy.com/course/engenharia-de-plataforma-do-conceito-a-plataforma-interna/?referralCode=1F85049179AB40CC0D96',
-    image: '/assets/images/courses/engenharia-plataforma.png',
+    image: '/assets/images/courses/engenharia-plataforma.webp',
   },
   {
     id: 'github-actions',
@@ -36,7 +36,7 @@ export const courses = [
     badge: 'Novo',
     featured: true,
     url: 'https://www.udemy.com/course/github-actions-guia-completo-do-zero-ao-deploy/?referralCode=60082D18B7A95410D60C',
-    image: '/assets/images/courses/github-actions.png',
+    image: '/assets/images/courses/github-actions.webp',
   },
   {
     id: 'engenharia-prompt',
@@ -49,7 +49,7 @@ export const courses = [
     badge: 'Novo',
     featured: false,
     url: 'https://www.udemy.com/course/engenharia-de-prompt-para-desenvolvedores-e-devops/?referralCode=8D82110C386AC1683361',
-    image: '/assets/images/courses/engenharia-prompt.png',
+    image: '/assets/images/courses/engenharia-prompt.webp',
   },
   {
     id: 'terraform-ia',
@@ -62,7 +62,7 @@ export const courses = [
     badge: 'Novo',
     featured: false,
     url: 'https://www.udemy.com/course/terraform-seguro-2025-devsecops-azure-sem-vulnerabilidades/?referralCode=56AC1D8EE6FC6574CEDE',
-    image: '/assets/images/courses/terraform-ia.png',
+    image: '/assets/images/courses/terraform-ia.webp',
   },
   {
     id: 'chatgpt-essencial',
@@ -75,7 +75,7 @@ export const courses = [
     badge: 'Gratuito',
     featured: false,
     url: 'https://www.udemy.com/course/ia-com-chatgpt-sem-enrolacao-do-zero-ao-essencial/?referralCode=AC46610BA618B97C14C8',
-    image: '/assets/images/courses/chatgpt.png',
+    image: '/assets/images/courses/chatgpt.webp',
   },
   {
     id: 'devops-iniciantes',
@@ -88,6 +88,6 @@ export const courses = [
     badge: 'Gratuito',
     featured: false,
     url: 'https://www.udemy.com/course/devops-para-iniciantes-primeiros-passos-em-menos-de-2-horas/?referralCode=638ADE7A2C334ECE0B96',
-    image: '/assets/images/courses/devops-iniciantes.png',
+    image: '/assets/images/courses/devops-iniciantes.webp',
   },
 ]

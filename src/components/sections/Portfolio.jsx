@@ -58,7 +58,7 @@ function ProjectCard({ project, index }) {
   const [ref, isInView] = useInView({ threshold: 0.1 })
 
   return (
-    <div
+    <article
       ref={ref}
       className="h-full"
       style={{
@@ -126,7 +126,7 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
       </Card>
-    </div>
+    </article>
   )
 }
 

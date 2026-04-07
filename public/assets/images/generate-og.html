@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Image — Ieso Dias</title>
+  <meta name="viewport" content="width=1200" />
+
+  <!-- Fonts matching the brand system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── Design Tokens ─── */
+    :root {
+      --primary:  #1c2385;
+      --orange:   #f97316;
+      --orange-l: #fb923c;
+      --dark:     #1a1a2e;
+      --dark-d:   #0f0f1e;
+      --white:    #ffffff;
+      --green:    #28c840;
+    }
+
+    /* ─── Canvas ─── */
+    .og {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 42%, var(--dark-d) 100%);
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    /* ─── Texture layers ─── */
+    .og::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20px 20px, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    .og::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ─── Ambient glow orbs ─── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .orb--blue   { width: 400px; height: 400px; top: -80px; right: 50px;  background: var(--primary); opacity: .35; }
+    .orb--orange { width: 320px; height: 320px; bottom: -40px; left: 40px; background: var(--orange); opacity: .08; }
+    .orb--center { width: 560px; height: 560px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #2d2d6b; opacity: .12; }
+
+    /* ─── Subtle border frame ─── */
+    .frame {
+      position: absolute;
+      top: 24px; left: 24px; right: 24px; bottom: 24px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    /* ─── Terminal block (top-left) ─── */
+    .terminal {
+      position: absolute;
+      top: 52px; left: 60px;
+      opacity: .55;
+    }
+    .terminal__bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 220px;
+      height: 28px;
+      padding: 0 10px;
+      background: rgba(255,255,255,.06);
+      border-radius: 6px;
+    }
+    .terminal__dot { width: 9px; height: 9px; border-radius: 50%; }
+    .terminal__dot--r { background: #ff5f57; }
+    .terminal__dot--y { background: #febc2e; }
+    .terminal__dot--g { background: #28c840; }
+    .terminal__title {
+      flex: 1;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: rgba(255,255,255,.5);
+    }
+    .terminal__lines {
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.8;
+      opacity: .65;
+    }
+    .terminal__lines .prompt { color: var(--green); }
+    .terminal__lines .output { color: rgba(255,255,255,.4); }
+
+    /* ─── Code bracket decoration ─── */
+    .code-deco {
+      position: absolute;
+      top: 50px; right: 60px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 180px;
+      font-weight: 300;
+      color: var(--white);
+      opacity: .06;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ─── Main content block ─── */
+    .content {
+      position: absolute;
+      top: 240px; left: 60px;
+    }
+
+    /* Orange accent bar */
+    .accent-bar {
+      position: absolute;
+      left: 0; top: 0;
+      width: 5px; height: 130px;
+      border-radius: 2.5px;
+      background: linear-gradient(to bottom, var(--orange), var(--orange-l));
+    }
+
+    .name {
+      margin-left: 26px;
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-size: 80px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(249,115,22,.2);
+    }
+
+    .subtitle {
+      margin-left: 30px;
+      margin-top: 18px;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: var(--orange);
+      opacity: .95;
+    }
+
+    .tagline {
+      margin-left: 30px;
+      margin-top: 14px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,.45);
+      letter-spacing: .5px;
+    }
+
+    /* Horizontal rule */
+    .hr {
+      margin-left: 30px;
+      margin-top: 20px;
+      width: 410px;
+      height: 2px;
+      background: linear-gradient(to right, var(--orange), var(--orange-l));
+      opacity: .3;
+      border: none;
+    }
+
+    /* ─── Tech badges ─── */
+    .badges {
+      display: flex;
+      gap: 12px;
+      margin-left: 30px;
+      margin-top: 18px;
+    }
+    .badge {
+      padding: 6px 16px;
+      background: rgba(255,255,255,.06);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: rgba(255,255,255,.5);
+    }
+
+    /* ─── Geometric accents (right side) ─── */
+    .geo {
+      position: absolute;
+      pointer-events: none;
+    }
+    .geo--diamond {
+      top: 290px; right: 170px;
+      width: 60px; height: 60px;
+      border: 2px solid var(--orange);
+      border-radius: 4px;
+      transform: rotate(45deg);
+      opacity: .15;
+    }
+    .geo--diamond-sm {
+      top: 222px; right: 108px;
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 2px;
+      transform: rotate(45deg);
+      opacity: .08;
+    }
+    .geo--circle1 {
+      bottom: 120px; right: 230px;
+      width: 16px; height: 16px;
+      border: 1.5px solid var(--orange);
+      border-radius: 50%;
+      opacity: .2;
+    }
+    .geo--circle2 {
+      bottom: 92px; right: 190px;
+      width: 8px; height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: .15;
+    }
+    .geo--circle3 {
+      bottom: 160px; right: 70px;
+      width: 24px; height: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+    .geo--dotline {
+      top: 370px; right: 60px;
+      width: 140px; height: 1px;
+      border-top: 1px dashed var(--orange);
+      opacity: .2;
+    }
+    .geo--dotline::after {
+      content: '';
+      position: absolute;
+      right: 0; top: -3px;
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: .8;
+    }
+
+    /* ─── Corner brackets ─── */
+    .corner { position: absolute; pointer-events: none; }
+    .corner--tr { top: 40px; right: 40px; }
+    .corner--bl { bottom: 40px; left: 40px; }
+    .corner span {
+      display: block;
+      position: absolute;
+      background: var(--orange);
+      opacity: .12;
+    }
+    .corner--tr span:first-child { width: 20px; height: 2px; top: 0; right: 0; }
+    .corner--tr span:last-child  { width: 2px; height: 20px; top: 0; right: 0; }
+    .corner--bl span:first-child { width: 2px; height: 20px; bottom: 0; left: 0; }
+    .corner--bl span:last-child  { width: 20px; height: 2px; bottom: 0; left: 0; }
+
+    /* ─── Bottom bar ─── */
+    .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50px;
+      background: rgba(0,0,0,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .bottom-bar__dot {
+      width: 6px; height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: .7;
+    }
+    .bottom-bar__url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: rgba(255,255,255,.6);
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="og">
+  <!-- Glow orbs -->
+  <div class="orb orb--blue"></div>
+  <div class="orb orb--orange"></div>
+  <div class="orb orb--center"></div>
+
+  <!-- Frame -->
+  <div class="frame"></div>
+
+  <!-- Terminal (top-left) -->
+  <div class="terminal">
+    <div class="terminal__bar">
+      <span class="terminal__dot terminal__dot--r"></span>
+      <span class="terminal__dot terminal__dot--y"></span>
+      <span class="terminal__dot terminal__dot--g"></span>
+      <span class="terminal__title">terminal</span>
+    </div>
+    <div class="terminal__lines">
+      <div><span class="prompt">❯ terraform apply</span></div>
+      <div><span class="output">Apply complete! Resources: 42 added</span></div>
+      <div><span class="prompt">❯ kubectl get pods</span></div>
+      <div><span class="output">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;READY&nbsp;&nbsp; STATUS</span></div>
+      <div><span class="output">app-deploy-7d4&nbsp;&nbsp;&nbsp;3/3&nbsp;&nbsp;&nbsp;&nbsp; Running</span></div>
+    </div>
+  </div>
+
+  <!-- Code bracket deco -->
+  <div class="code-deco">{&gt;}</div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="accent-bar"></div>
+    <div class="name">Ieso Dias</div>
+    <div class="subtitle">DevOps &nbsp;|&nbsp; Cloud &nbsp;|&nbsp; Automação</div>
+    <div class="tagline">DevOps na prática. Da infraestrutura ao deploy.</div>
+    <hr class="hr" />
+    <div class="badges">
+      <span class="badge">Terraform</span>
+      <span class="badge">Kubernetes</span>
+      <span class="badge">Docker</span>
+      <span class="badge">CI/CD</span>
+      <span class="badge">AWS</span>
+      <span class="badge">Azure</span>
+    </div>
+  </div>
+
+  <!-- Geometric accents -->
+  <div class="geo geo--diamond"></div>
+  <div class="geo geo--diamond-sm"></div>
+  <div class="geo geo--circle1"></div>
+  <div class="geo geo--circle2"></div>
+  <div class="geo geo--circle3"></div>
+  <div class="geo geo--dotline"></div>
+
+  <!-- Corner brackets -->
+  <div class="corner corner--tr"><span></span><span></span></div>
+  <div class="corner corner--bl"><span></span><span></span></div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="bottom-bar__dot"></span>
+    <span class="bottom-bar__url">iesodias.com</span>
+  </div>
+</div>
+
+</body>
+</html>

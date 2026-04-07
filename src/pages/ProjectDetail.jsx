@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { projects } from '../data/projects'
+import { personal } from '../data/personal'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
+import JsonLd from '../components/seo/JsonLd'
 import {
   ArrowLeft,
   ExternalLink,
@@ -78,12 +80,78 @@ export default function ProjectDetail() {
   }
 
   /* ── Project found ─────────────────────────────────────── */
+  const projectUrl = 'https://iesodias.com/projeto/' + project.slug
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://iesodias.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: project.title,
+        item: projectUrl,
+      },
+    ],
+  }
+
+  const softwareSourceCodeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareSourceCode',
+    name: project.title,
+    description: project.description,
+    url: projectUrl,
+    author: {
+      '@type': 'Person',
+      name: personal.name,
+    },
+    programmingLanguage: project.technologies,
+  }
+
   return (
     <>
       <Helmet>
-        <title>{project.title} | Portfólio DevOps</title>
-        <meta name="description" content={project.description} />
+        <title>{project.title} | Portfólio DevOps — Ieso Dias</title>
+        <meta
+          name="description"
+          content={project.shortDescription || project.description}
+        />
+        <link
+          rel="canonical"
+          href={'https://iesodias.com/projeto/' + project.slug}
+        />
+        <meta
+          property="og:title"
+          content={project.title + ' | Portfólio DevOps'}
+        />
+        <meta
+          property="og:description"
+          content={project.shortDescription || project.description}
+        />
+        <meta
+          property="og:url"
+          content={projectUrl}
+        />
+        <meta
+          property="og:image"
+          content="https://iesodias.com/assets/images/og-image.png"
+        />
+        <meta
+          name="twitter:title"
+          content={project.title + ' | Portfólio DevOps'}
+        />
+        <meta
+          name="twitter:description"
+          content={project.shortDescription || project.description}
+        />
       </Helmet>
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={softwareSourceCodeSchema} />
 
       {/* ─── A · Hero / Header ───────────────────────────── */}
       <section className="bg-gray-bg dark:bg-[#12122a] py-12 md:py-20">
