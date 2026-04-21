@@ -53,18 +53,43 @@ function applyRouteMetadata(route, html) {
     return html
   }
 
+  // Remove ALL title tags (can be multiple due to Helmet rendering)
+  let output = html.replace(/<title[^>]*>.*?<\/title>/gi, '')
+  
+  // Insert single correct title tag
   const title = `${project.title} | Portfólio DevOps`
-  const description = project.description
   const titleTag = `<title>${escapeHtml(title)}</title>`
-  const descriptionTag = `<meta name="description" content="${escapeHtml(description)}">`
+  output = output.replace('</head>', `    ${titleTag}\n</head>`)
 
-  let output = html.replace(/<title[^>]*>[\s\S]*?<\/title>/i, titleTag)
-
-  if (/<meta\s+name="description"[^>]*>/i.test(output)) {
-    output = output.replace(/<meta\s+name="description"[^>]*>/i, descriptionTag)
-  } else {
-    output = output.replace('</head>', `  ${descriptionTag}\n</head>`)
+  // Remove duplicate meta tags - keep only the last occurrence of each tag
+  // Remove meta name="description" - keep last one
+  const descriptions = output.match(/<meta\s+name="description"[^>]*>/gi) || []
+  if (descriptions.length > 1) {
+    output = output.replace(/<meta\s+name="description"[^>]*>/gi, '')
+    // Re-add the correct one
+    const correctDesc = `<meta name="description" content="${escapeHtml(project.shortDescription || project.description)}">`
+    output = output.replace('</head>', `  ${correctDesc}\n</head>`)
   }
+
+  // Remove duplicate og:* and twitter:* tags - keep only the project-specific ones
+  output = output.replace(/<meta\s+property="og:(title|description|url|image)"[^>]*>/gi, '')
+  output = output.replace(/<meta\s+name="twitter:(title|description|image)"[^>]*>/gi, '')
+  
+  // Re-add correct og and twitter tags
+  const projectUrl = `https://iesodias.com/projeto/${project.slug}`
+  const ogTitle = `<meta property="og:title" content="${escapeHtml(project.title + ' | Portfólio DevOps')}">`
+  const ogDesc = `<meta property="og:description" content="${escapeHtml(project.shortDescription || project.description)}">`
+  const ogUrl = `<meta property="og:url" content="${projectUrl}">`
+  const ogImage = `<meta property="og:image" content="https://iesodias.com/assets/images/og-image.png">`
+  const twTitle = `<meta name="twitter:title" content="${escapeHtml(project.title + ' | Portfólio DevOps')}">`
+  const twDesc = `<meta name="twitter:description" content="${escapeHtml(project.shortDescription || project.description)}">`
+
+  output = output.replace('</head>', `  ${ogTitle}\n  ${ogDesc}\n  ${ogUrl}\n  ${ogImage}\n  ${twTitle}\n  ${twDesc}\n</head>`)
+
+  // Remove duplicate canonical
+  output = output.replace(/<link\s+rel="canonical"[^>]*>/gi, '')
+  const canonical = `<link rel="canonical" href="${projectUrl}">`
+  output = output.replace('</head>', `  ${canonical}\n</head>`)
 
   return output
 }
