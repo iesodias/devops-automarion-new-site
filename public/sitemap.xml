@@ -2,20 +2,116 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://iesodias.com/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://iesodias.com/projeto/devops-automation-lab</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://iesodias.com/projeto/tech-challenge-cloud-labs</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Udemy Courses - Featured -->
+  <url>
+    <loc>https://www.udemy.com/course/devops-automacao-sem-enrolacao/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.udemy.com/course/engenharia-de-plataforma-do-conceito-a-plataforma-interna/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.udemy.com/course/github-actions-guia-completo-do-zero-ao-deploy/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Udemy Courses - Non-Featured -->
+  <url>
+    <loc>https://www.udemy.com/course/engenharia-de-prompt-para-desenvolvedores-e-devops/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.udemy.com/course/terraform-seguro-2025-devsecops-azure-sem-vulnerabilidades/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.udemy.com/course/ia-com-chatgpt-sem-enrolacao-do-zero-ao-essencial/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.udemy.com/course/devops-para-iniciantes-primeiros-passos-em-menos-de-2-horas/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- GitHub Labs - AWS Basic -->
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/aws/basico/01-criando-s3-bucket</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/aws/basico/02-criando-iam-user-e-grupo</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/aws/basico/03-instalando-aws-cli</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- GitHub Labs - AWS Intermediary -->
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/aws/intermediario/01-provisionando-ec2</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- GitHub Labs - Azure Basic -->
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/azure/basico/01-criando-resource-group</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/azure/basico/02-criando-storage-account</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/azure/basico/03-instalando-azure-cli</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- GitHub Labs - Azure Intermediary -->
+  <url>
+    <loc>https://github.com/iesodias/tech-challenge/tree/main/labs/azure/intermediario/01-criando-virtual-machine</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
